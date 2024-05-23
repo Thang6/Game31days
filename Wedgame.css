@@ -1,0 +1,22 @@
+.colored-div {
+        background-color: #3498db;
+        color: green;
+        padding: 100px;
+        border-radius: 50px;
+        text-align: left;
+}
+
+.image-container {
+    text-align: left;
+    width: 100px;
+    margin: 0 auto;
+}
+.image-container img {
+    width: 100%;
+    height: auto;
+}
+.image-container p {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #333;
+}
