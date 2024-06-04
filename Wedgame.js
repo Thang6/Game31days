@@ -1,42 +1,33 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const itemsPerPage = 6;
-    const gridContainer = document.getElementById('game-grid');
-    const gridItems = Array.from(gridContainer.getElementsByClassName('grid-item'));
-    const prevBtn = document.getElementById('prev-btn');
-    const nextBtn = document.getElementById('next-btn');
-    const pageInfo = document.getElementById('page-info');
+let currentPage = 1;
+const totalPages = document.querySelectorAll('.page').length;
 
-    let currentPage = 1;
-    const totalPages = Math.ceil(gridItems.length / itemsPerPage);
-
-    function showPage(page) {
-        const start = (page - 1) * itemsPerPage;
-        const end = start + itemsPerPage;
-
-        gridItems.forEach((item, index) => {
-            item.style.display = index >= start && index < end ? 'block' : 'none';
-        });
-
-        prevBtn.disabled = page === 1;
-        nextBtn.disabled = page === totalPages;
-
-        pageInfo.textContent = `${page} / ${totalPages}`;
+document.getElementById('prevBtn').addEventListener('click', () => {
+    if (currentPage > 1) {
+        currentPage--;
+        updatePagination();
     }
-
-    prevBtn.addEventListener('click', () => {
-        if (currentPage > 1) {
-            currentPage--;
-            showPage(currentPage);
-        }
-    });
-
-    nextBtn.addEventListener('click', () => {
-        if (currentPage < totalPages) {
-            currentPage++;
-            showPage(currentPage);
-        }
-    });
-
-    // Hiển thị trang đầu tiên
-    showPage(currentPage);
 });
+
+document.getElementById('nextBtn').addEventListener('click', () => {
+    if (currentPage < totalPages) {
+        currentPage++;
+        updatePagination();
+    }
+});
+
+function updatePagination() {
+    document.querySelectorAll('.page').forEach((page) => {
+        if (parseInt(page.getAttribute('data-page')) === currentPage) {
+            page.classList.add('active');
+        } else {
+            page.classList.remove('active');
+        }
+    });
+
+    document.getElementById('pageInfo').textContent = `${currentPage} / ${totalPages}`;
+
+    document.getElementById('prevBtn').disabled = currentPage === 1;
+    document.getElementById('nextBtn').disabled = currentPage === totalPages;
+}
+
+updatePagination();

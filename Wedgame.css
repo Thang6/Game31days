@@ -143,8 +143,8 @@ ul {
 }
 
 .logo-container img {
-  width: 50%;
-  height: 50%;
+  width: 10%;
+  height: 10%;
 }
 
 /* CSS cho phần chứa ảnh game */
@@ -203,7 +203,17 @@ ul {
   cursor: not-allowed;
 }
 
-.page-info {
+#page-info {
   display: inline-block;
   padding: 10px;
   font-size: 16px;
+}
+
+/* Đảm bảo chỉ trang hiện tại được hiển thị */
+.grid-page {
+  display: none;
+}
+
+.grid-page.active {
+  display: grid;
+}

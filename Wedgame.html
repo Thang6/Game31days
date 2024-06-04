@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Test thử trang web</title>
-    <link rel="stylesheet" href="Wedgame.css">
-    <link rel="stylesheet" href="Wedgame.js">
+    <link rel="stylesheet" href="test1.css">
+    <link rel="stylesheet" href="test2.css">
 </head>
 <body>
     <div class="container">
@@ -58,7 +58,7 @@
         <!-- thêm phần chứa ảnh game -->
         <div class="floating-div"> 
             <h1>Hành động</h1>
-            <div class="grid-container">
+            <div class="grid-container" id="game-grid">
                 <div class="grid-item"><img src="image1.jpg" alt="Game Image 1"></div>
                 <div class="grid-item"><img src="image2.jpg" alt="Game Image 2"></div>
                 <div class="grid-item"><img src="image3.jpg" alt="Game Image 3"></div>
@@ -85,7 +85,7 @@
             </div>
             <div class="pagination">
                 <button class="page-btn" id="prev-btn">Trang trước</button>
-                <span id="page-info">1/5</span>
+                <span id="page-info">1 / 4</span>
                 <button class="page-btn" id="next-btn">Trang sau</button>
             </div>
         </div>
@@ -99,5 +99,6 @@
             <li><a href="#Đua xe" class="link">Đua xe</a></li>
         </ul>
     </nav>
+    <script src="pagination.js"></script>
 </body>
 </html>
