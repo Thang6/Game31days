@@ -1,210 +1,133 @@
+*{margin: 0; padding: 0; box-sizing: border-box;}
+/*tạo thanh ngang để giới thiệu những thể loại game*/
+a{
+  text-decoration: none;
+  color: red;
+}
+header {
+  display: flex;
+  padding: 0px 10px;
+  justify-content: space-between;
+  background-color: lightblue;
+  align-items: center;
+}
+header .logo{
+  width: 15%;
+  text-transform: uppercase;
+  color: white;
+}
+header ul.menu{
+  display: flex;
+  list-style: none;
+}
+header ul.menu>li{
+  padding: 10px 20px;
+  border-right: 1px solid #000;
+}
+/* CSS phần đặc biệt */
 body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
-  background-color: #e0f7fa; /* Phủ nền xanh da trời nhạt */
 }
 
 .container {
-  width: 100%;
-  margin: 0 auto;
-  padding: 10px;
-  box-sizing: border-box;
   display: flex;
-  flex-direction: column; /* Đặt các phần tử theo chiều dọc */
-  align-items: center; /* Căn giữa các phần tử */
-}
-
-.sections-wrapper {
-  background-image: url('nền vũ trụ.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 100%;
-  display: flex;
-  flex-direction: row; /* Sắp xếp các cột theo hàng ngang */
-  width: 100%; /* Chiếm toàn bộ chiều rộng của container */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Tạo đổ bóng nhẹ cho thẻ div nổi */
-  border-radius: 10px; /* Bo góc cho thẻ div nổi */
-  background-color: #fff; /* Màu nền trắng cho thẻ div nổi */
-  margin-bottom: 20px; /* Khoảng cách phía dưới */
-}
-
-h1 {
-  text-align: center; 
-  margin-bottom: 10px;
-}
-
-.form-group {
-  margin-bottom: 10px;
-}
-
-label {
-  display: block;
-  margin-bottom: 5px;
-}
-
-input {
-  width: 100%;
-  padding: 6px;
-}
-
-.column {
-  flex: 1;
-  padding: 5px;
-  box-sizing: border-box;
-}
-
-.colored-div {
-  color: green;
-  padding: 10px;
-  border-radius: 20px;
-  display: flex;
-  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20px;
 }
 
 .section {
-  flex: 1;
+  width: 48%;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  padding: 20px;
   box-sizing: border-box;
-  padding: 5px;
-  display: flex;
-  flex-direction: column;
-  position: relative; /* Đặt vị trí tương đối cho section */
 }
 
-.image-container {
-  text-align: left;
-  flex: 1;
-  margin-bottom: 10px;
+.section.latest {
+  background-color: #e0f7fa;
 }
 
-.image-container img {
-  width: 40%;
-  height: auto;
+.section.best {
+  background-color: #ffebee;
 }
 
-.image-container p {
-  margin-top: 5px;
-  font-size: 14px;
+.section h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
   color: #333;
 }
 
-.search-bar {
-  display: flex;
-  align-items: center;
-}
-
-.search-bar input[type="text"] {
-  flex: 1;
-  padding: 6px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-.search-bar button[type="submit"] {
-  padding: 8px 10px;
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.account-wrapper {
-  background-image: url('ảnh vutru.webp');
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 100%;
-  width: 80%; /* Thu nhỏ phần tạo tài khoản */
-  max-width: 400px; /* Đặt kích thước tối đa */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Tạo đổ bóng nhẹ */
-  border-radius: 10px; /* Bo góc cho thẻ div nổi */
-  padding: 20px;
-  background-color: 
-
-
-
-/* thẻ điều hướng nav */
-ul li {
-  display: inline-block;
-  margin-right: 20px; /* Thêm khoảng cách bên phải mỗi mục */
-  border-bottom: 1px solid #ccc; /* Đường viền dưới màu xám nhạt */
-}
-
-.ul {
-  text-align: center; /* Căn chỉnh các mục ở giữa */
-  list-style-type: none; /* Loại bỏ dấu chấm mặc định */
-}
-
-/* chèn logo */
-.logo-container {
+.game {
   text-align: center;
-  padding: 10px;
-}
-
-.logo-container img {
-  width: 50%;
-  height: 50%;
-}
-
-/* CSS cho phần chứa ảnh game */
-.floating-div {
-  position: relative;
-  width: 100%;
-  padding: 20px;
-  background-color: white;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
   margin-bottom: 20px;
 }
 
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-  gap: 10px;
+.game img {
+  max-width: 100px;
+  display: block;
+  margin: 0 auto 10px;
 }
 
-.grid-item {
+.game p {
+  font-size: 18px;
+  margin: 10px 0;
+  color: #333;
+}
+
+.game span {
+  font-size: 14px;
+  color: #666;
+}
+
+.games {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.games .game {
+  width: 30%;
+  margin-bottom: 20px;
+}
+/* Thay đổi phần game mới nhất */
+
+.slideshow-container {
+  max-width: 100%;
   position: relative;
-  padding-top: 100%; /* Tạo tỷ lệ 1:1 cho các ô vuông */
-  overflow: hidden;
-  border: 1px solid #ddd;
-  border-radius: 5px;
+  margin: auto;
 }
 
-.grid-item img {
-  position: absolute;
-  top: 0;
-  left: 0;
+.mySlides {
+  display: none;
+}
+
+.mySlides img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 5px;
 }
 
-/* Thêm CSS cho phân trang */
-.pagination {
-  text-align: center;
-  margin: 20px 0;
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 3s;
+  animation-name: fade;
+  animation-duration: 3s;
 }
 
-.page-btn {
-  padding: 10px 20px;
-  margin: 0 5px;
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
 }
 
-.page-btn:disabled {
-  background-color: #ccc;
-  cursor: not-allowed;
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
 }
 
-.page-info {
-  display: inline-block;
-  padding: 10px;
-  font-size: 16px;
+.section.latest .slideshow-container img {
+  width: 100%;
+  max-width: 500px; /* Adjust this value to change the size */
+  height: auto;
+}

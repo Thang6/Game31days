@@ -1,33 +1,14 @@
-let currentPage = 1;
-const totalPages = document.querySelectorAll('.page').length;
+let slideIndex = 0;
+showSlides();
 
-document.getElementById('prevBtn').addEventListener('click', () => {
-    if (currentPage > 1) {
-        currentPage--;
-        updatePagination();
+function showSlides() {
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
     }
-});
-
-document.getElementById('nextBtn').addEventListener('click', () => {
-    if (currentPage < totalPages) {
-        currentPage++;
-        updatePagination();
-    }
-});
-
-function updatePagination() {
-    document.querySelectorAll('.page').forEach((page) => {
-        if (parseInt(page.getAttribute('data-page')) === currentPage) {
-            page.classList.add('active');
-        } else {
-            page.classList.remove('active');
-        }
-    });
-
-    document.getElementById('pageInfo').textContent = `${currentPage} / ${totalPages}`;
-
-    document.getElementById('prevBtn').disabled = currentPage === 1;
-    document.getElementById('nextBtn').disabled = currentPage === totalPages;
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}
+    slides[slideIndex-1].style.display = "block";
+    setTimeout(showSlides, 2000); // Change image every 2 seconds
 }
-
-updatePagination();
