@@ -1,13 +1,17 @@
-$(document).ready(function(){
-  $('.child-div').hover(function(){
-      var gameInfo = $(this).find('.game-info').html();
-      var offset = $(this).offset();
-      $('#game-info-text').html(gameInfo);
-      $('#game-info-popup').css({
-          top: offset.top + $(this).height() + 10 + 'px',
-          left: offset.left + 'px'
-      }).removeClass('hidden');
-  }, function(){
-      $('#game-info-popup').addClass('hidden');
-  });
-});
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}
+    slides[slideIndex-1].style.display = "block";
+    setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
+function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
