@@ -510,7 +510,7 @@ h3 {
     align-items: center;
 }
 
-.list-film{
+.list-game{
     position: relative;
     display: flex;
     justify-content: start;
@@ -518,7 +518,7 @@ h3 {
     transform: translateX(0); 
 }
 
-.list-film a img {
+.list-game a img {
     transition: all .5s ease-in-out;
     width: 280px;
     height: 200px;
@@ -528,7 +528,7 @@ h3 {
     border-radius: 1cap;
     cursor: pointer;
 }
-.list-film img:hover{
+.list-game img:hover{
     transform: scale(1.2);
 }
 
